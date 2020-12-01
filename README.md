@@ -7,6 +7,6 @@ When you collect photos from https://www.mlb.com/players, please input 'python c
 
 When you collect photos from https://www.mlb.com/"teams"/roster, please input 'python collect_mlb_player_photos.py'. (First time, let IS_EXIST be False)
 
-When you collect photos from https://www.milb.com/"team"/roster, please input 'python collect_mlb_player_photos.py'. (First time, let IS_EXIST be False)
+When you collect photos from https://www.milb.com/"team"/roster, please input 'python collect_milb_player_photos.py'. (First time, let IS_EXIST be False)
 
 rename_jpg_file convert jpg file into png file.
