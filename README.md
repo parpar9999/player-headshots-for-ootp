@@ -1,14 +1,4 @@
 # player-headshots-for-ootp
-This pack includes mlb and milb player's photos (4000+) collected from mlb and milb official site (2020 ver).
+You can download the pack that includes mlb and milb player's photos from  https://drive.google.com/file/d/1eQAUm8akpcN3qTy9iC1AcXtoQWPjT3Xi/view?usp=sharing.
 
-Please download photos (mlb and milb) from https://drive.google.com/file/d/17MYWKiayuFlpyaOKsVsOgLlZIKcj7TFZ/view?usp=sharing.
-
-Also, you can download the pack includes mlb, milb, npb, kbo and cpbl player photos from https://drive.google.com/file/d/1pWGZS4VAnknuytS30JFs_P6-vd2LQXgU/view?usp=sharing.
-
-When you collect photos from https://www.mlb.com/players, please input 'python collect_all_mlb_player_photos.py'.
-
-When you collect photos from https://www.mlb.com/"teams"/roster, please input 'python collect_mlb_player_photos.py'. (First time, let IS_EXIST be False)
-
-When you collect photos from https://www.milb.com/"team"/roster, please input 'python collect_milb_player_photos.py'. (First time, let IS_EXIST be False)
-
-rename_jpg_file can convert jpg file into png file.
+You can also download the pack that includes mlb, milb, npb, kbo, cpbl player's photos from https://drive.google.com/file/d/1yX5ZxtagRZso-aQ_5FPRcQvMUUIklDYu/view?usp=sharing.
