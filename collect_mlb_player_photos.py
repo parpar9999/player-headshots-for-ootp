@@ -15,7 +15,7 @@ team_list = ['orioles', 'redsox', 'whitesox', 'indians', 'tigers', 'astros', 'ro
             'mets', 'brewers', 'marlins', 'dodgers', 'rockies', 'reds', 'cubs', 'braves',\
             'dbacks']
 
-default_url = 'https://www.mlb.com/team/roster/nri'
+default_url = 'https://www.mlb.com/team/roster/'
 
 fp =  open('same_name.txt', 'w+')
 
