@@ -1,4 +1,4 @@
-# player-headshots-for-ootp
+# headshots-for-ootp
 You can download the pack(2021ver.) that includes mlb and milb players' photos (6500+) from https://drive.google.com/file/d/17zY30oeoY7OnUvYGRKYkZhCEIH1v7cma/view?usp=sharing.
 
 You can also download the pack(2021ver.) that includes mlb, milb and foreign league players' photos (9400+) from https://drive.google.com/file/d/1w-mPLSUJHAlvZPmPZXLI4fTEjLyrM0Oe/view?usp=sharing.
