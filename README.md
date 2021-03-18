@@ -1,9 +1,9 @@
 # headshots-for-ootp
-You can download the pack(2021ver.) that includes mlb and milb players' photos (6500+) from https://drive.google.com/file/d/17zY30oeoY7OnUvYGRKYkZhCEIH1v7cma/view?usp=sharing.
+You can download the pack(2021ver.) that includes mlb and milb players' photos (6500+) from https://drive.google.com/file/d/1ZozV2kR6vTiRU6XCKVbFpldRmahATVz2/view?usp=sharing.
 
-You can also download the pack(2021ver.) that includes mlb, milb and foreign league players' photos (9400+) from https://drive.google.com/file/d/1w-mPLSUJHAlvZPmPZXLI4fTEjLyrM0Oe/view?usp=sharing.
+You can also download the pack(2021ver.) that includes mlb, milb and foreign league players' photos (9400+) from https://drive.google.com/file/d/1P-0gI1mLpQt7a3lLhJyDKQYb3Q1T_KvX/view?usp=sharing.
 
-collect_mlb_player_photos.py: collecting from https://www.mlb.com/TEAM/roster.
+collect_mlb_player_photos.py: collecting from https://www.mlb.com/TEAM/roster/40-man.
 
 collect_all_mlb_player_photos.py: collecting from https://www.mlb.com/players. (not working as of 2021/3/15)
 
@@ -21,4 +21,4 @@ collect_r_milb_player_photos.py: collecting from https://www.baseball-reference.
 
 collect_r_foreign_player_photos.py: collecting from https://www.baseball-reference.com/register.
 
-Note: When you run these scripts for the first time, you have to create the folders. If the script has IS_EXiST flag, you also let this flag False.
+Note: When you run these scripts for the first time, you have to create the folders. If the script has IS_EXiST flag, you also let this flag be False.
