@@ -1,9 +1,11 @@
 # headshots-for-ootp
-You can download the pack(2021ver.) that includes mlb and milb players' photos (6500+) from https://drive.google.com/file/d/1ZozV2kR6vTiRU6XCKVbFpldRmahATVz2/view?usp=sharing.
+You can download the pack(2021ver.) that includes mlb and milb players' photos (6500+) from https://drive.google.com/file/d/1cVsdkxZitKIvMdNKM4SnNYEFxcs4_T4d/view?usp=sharing.
 
-You can also download the pack(2021ver.) that includes mlb, milb and foreign league players' photos (9400+) from https://drive.google.com/file/d/1P-0gI1mLpQt7a3lLhJyDKQYb3Q1T_KvX/view?usp=sharing.
+You can also download the pack(2021ver.) that includes mlb, milb and foreign league players' photos (9400+) from https://drive.google.com/file/d/1bnZHjRX513ho3bmT-V-iTrHR4YJm1_Dt/view?usp=sharing.
 
 collect_mlb_player_photos.py: collecting from https://www.mlb.com/TEAM/roster/40-man.
+
+collect_mlb_player_photos_tr.py: collecting from https://www.mlb.com/TEAM/roster/transaction/YYYY/MM.
 
 collect_all_mlb_player_photos.py: collecting from https://www.mlb.com/players. (not working as of 2021/3/15)
 
