@@ -1,13 +1,14 @@
 import requests
 import unidecode
 import urllib.request
+from requests.packages.urllib3.exceptions import InsecureRequestWarning
 import os
 import re
 import numpy as np
 from bs4 import BeautifulSoup
 from PIL import Image
 
-IS_EXIST = True
+IS_EXIST = False
 headshot_path = './milb_photos/'
 headshot_by_team_path = './milb_photos_by_team/'
 
@@ -34,43 +35,52 @@ team_list = ['aberdeen', 'akron', 'albuquerque', 'altoona', 'amarillo', 'arkansa
             'state-college', 'staten-island', 'stockton', 'syracuse', 'tacoma', 'tampa', 'tennessee',\
             'toledo', 'trenton', 'tri-city-dust-devils', 'tri-city-valleycats', 'tulsa', 'vancouver',\
             'vermont', 'visalia', 'west-michigan', 'west-virginia-black-bears', 'west-virginia-power',\
-            'wichita', 'williamsport', 'wilmington', 'winston-salem', 'wisconsin', 'worcester']
+            'wichita', 'williamsport', 'wilmington', 'winston-salem', 'wisconsin', 'worcester',\
+            'birmingham', 'charleston', 'charlotte-knights', 'greensboro', 'lehigh-valley', 'somerset', 'st-paul', 'sugar-land']
 
 default_url = 'https://www.milb.com/team/roster'
 
-fp =  open('same_name.txt', 'w+')
+requests.packages.urllib3.disable_warnings(InsecureRequestWarning)
+
+#fp =  open('same_name.txt', 'w+')
 
 cnt = 2
 
 if not IS_EXIST:
     for team_name in team_list:
-       path = headshot_path + team_name + '/'
+       path = headshot_by_team_path + team_name + '/'
        os.mkdir(path)
+    exit(1)
 
 for team_name in team_list:
     print(team_name)
     url = default_url.replace('team', team_name)
-    html = requests.get(url)
+    html = requests.get(url, verify=True)
     soup = BeautifulSoup(html.content, "html.parser")
+    players = soup.find_all(class_='player-link')
 
-    players = soup.find_all(class_='player-thumb__back')
     for player in players:
-        player = player.find('img')
-        name = player['alt']
+        name = player.text
         name = unidecode.unidecode(name).lower().strip()
         name = name.replace('sr.', 'sr')
         name = name.replace('jr.', 'jr')
 
-        headshot_url = player['src'].strip()
-        headshot_url = re.sub('/t[0-9]+/', '/generic/', headshot_url)
+        player_url = player['href'].strip()
+        #headshot_url = re.sub('/t[0-9]+/', '/generic/', headshot_url)
+        html2 = requests.get(player_url, verify=True)
+        soup2 = BeautifulSoup(html2.content, "html.parser")
+        try:
+            headshot_url = soup2.find(class_='player-headshot')['src'].strip()
+        except Exception as e:
+            continue
 
-        if '.png' in headshot_url:
-            file_path = headshot_by_team_path + team_name + '/' + name.replace(' ', '_') + '.png'
-        elif '.jpg' in headshot_url:
-            file_path = headshot_by_team_path + team_name + '/' + name.replace(' ', '_') + '.jpg'
-        else:
-            print('new format!!!')
-            exit(1)
+        #if '.png' in headshot_url:
+        file_path = headshot_by_team_path + team_name + '/' + name.replace(' ', '_') + '.png'
+        #elif '.jpg' in headshot_url:
+        #    file_path = headshot_by_team_path + team_name + '/' + name.replace(' ', '_') + '.jpg'
+        #else:
+        #    print('new format!!!')
+        #    exit(1)
 
         headshot = requests.get(headshot_url, verify=False)
         headshot = headshot.content
@@ -83,15 +93,14 @@ for team_name in team_list:
         except OSError:
             os.remove(file_path)
 
-        if '.png' in headshot_url:
-            file_path = headshot_path + '/' + name.replace(' ', '_') + '.png'
-        elif '.jpg' in headshot_url:
-            file_path = headshot_path + '/' + name.replace(' ', '_') + '.jpg'
+        #if '.png' in headshot_url:
+        file_path = headshot_path + '/' + name.replace(' ', '_') + '.png'
+        #elif '.jpg' in headshot_url:
+        #    file_path = headshot_path + '/' + name.replace(' ', '_') + '.jpg'
 
         if os.path.isfile(file_path):
-            print(file_path, file=fp)
-            file_path = headshot_path + '/' + name.replace(' ', '_') + '_' + str(cnt) + '.png'
-            cnt += 1
+            #print(file_path, file=fp)
+            file_path = headshot_path + '/' + name.replace(' ', '_') + '_' + team_name.lower() + '.png'
 
         with open(file_path, 'wb') as f:
             f.write(headshot)
