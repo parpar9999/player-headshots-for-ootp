@@ -9,7 +9,7 @@ collect_mlb_player_photos_tr.py: collecting from https://www.mlb.com/TEAM/roster
 
 collect_all_mlb_player_photos.py: collecting from https://www.mlb.com/players. (not working as of 2021/3/15)
 
-collect_milb_player_photos.py: collecting from https://www.milb.com/TEAM/roster. (not working as of 2021/3/15)
+collect_milb_player_photos.py: collecting from https://www.milb.com/TEAM/roster. 
 
 collect_npb_player_photos.py: collecting from https://npb.jp/bis/eng/players/active/TEAM.
 
