@@ -4,6 +4,7 @@ import urllib.request
 import os
 from bs4 import BeautifulSoup
 from PIL import Image
+from bs4 import Comment
 
 IS_EXIST = True
 headshot_path = './milb_photos_reference/'
@@ -47,14 +48,17 @@ for team in teams:
             continue
         soup2 = BeautifulSoup(html2.content, "html.parser")
 
-        # players = soup2.find_all(class_="left")[1:-1]
-        players = soup2.find(id='all_standard_roster')
-        a = str(players).split('<tbody>')[1].split('</tbody>')[:-1]
-        players = BeautifulSoup(a[0], "html.parser")
-        players = players.find_all('a')
+        soup2 = str(soup2).replace('<!--', '').replace('-->', '')
+        soup2 = BeautifulSoup(soup2, 'html.parser')
+        players = soup2.find_all(class_='table_container')
+
+        tmp = []
+        for p in players[:2]:
+            p = p.find_all('a')
+            tmp += p
+        players = tmp
 
         for player in players:
-            # player = player.find('a')
             name = player.text
             name = unidecode.unidecode(name).lower().strip()
             name = name.replace('sr.', 'sr')
@@ -94,7 +98,3 @@ for team in teams:
             except OSError:
                 os.remove(file_path)
             i += 1
-
-
-            # print(name, ': ', headshot)
-        # print('\n'*10)
