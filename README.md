@@ -4,7 +4,6 @@ You can download the pack(2021ver.) that includes mlb and milb players' photos (
 You can also download the pack(2021ver.) that includes mlb, milb and foreign league players' photos (9400+) from https://drive.google.com/file/d/1bnZHjRX513ho3bmT-V-iTrHR4YJm1_Dt/view?usp=sharing.
 
 Filename format: Firstname_Lastname.png
-
 If the name has more than two players, filename is Firstname_Lastname_Teamname.png (After the second player)
 
 collect_mlb_player_photos.py: collecting from https://www.mlb.com/TEAM/roster/40-man.
