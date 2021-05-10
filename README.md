@@ -3,6 +3,10 @@ You can download the pack(2021ver.) that includes mlb and milb players' photos (
 
 You can also download the pack(2021ver.) that includes mlb, milb and foreign league players' photos (9400+) from https://drive.google.com/file/d/1bnZHjRX513ho3bmT-V-iTrHR4YJm1_Dt/view?usp=sharing.
 
+Filename format: Firstname_Lastname.png
+
+If the name has more than two players, filename is Firstname_Lastname_Teamname.png (After the second player)
+
 collect_mlb_player_photos.py: collecting from https://www.mlb.com/TEAM/roster/40-man.
 
 collect_mlb_player_photos_tr.py: collecting from https://www.mlb.com/TEAM/roster/transaction/YYYY/MM.
@@ -19,7 +23,7 @@ collect_cpbl_player_photos.py: collecting from http://cpblstats.com/TEAM.
 
 collect_r_mlb_player_photos.py: collecting from https://www.baseball-reference.com/players/.
 
-collect_r_milb_player_photos.py: collecting from https://www.baseball-reference.com/register/affiliate.cgi. (not working as of 2021/3/15)
+collect_r_milb_player_photos.py: collecting from https://www.baseball-reference.com/register/affiliate.cgi.
 
 collect_r_foreign_player_photos.py: collecting from https://www.baseball-reference.com/register.
 
